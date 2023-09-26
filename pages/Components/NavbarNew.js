@@ -21,13 +21,14 @@ export default function NavbarNew() {
       link: "/Administracion",
       dropdownItems: ["Usuarios", "Permisos", "Indicadores"],
     },
+    
   ];
 
   const router = useRouter();
   const { theme } = useTheme();
 
   return (
-    <Navbar isBordered variant="floating" shouldHideOnScroll>
+    <Navbar isBordered shouldHideOnScroll variant="sticky">
       <Navbar.Toggle showIn="xs" />
       <Navbar.Brand
         css={{
@@ -48,6 +49,7 @@ export default function NavbarNew() {
         </Text>
       </Navbar.Brand>
       <Navbar.Content
+        //Estas son las propiedades del navbar, podriamos quitar algunas para evitar un par de bugs con el mismo
         enableCursorHighlight
         activeColor="error"
         hideIn="xs"
@@ -129,10 +131,10 @@ export default function NavbarNew() {
           >
             <Dropdown.Item key="profile" css={{ height: "$18" }}>
               <Text b color="inherit" css={{ d: "flex" }}>
-                Signed in as
+                Sesion iniciada como: 
               </Text>
               <Text b color="inherit" css={{ d: "flex" }}>
-                zoey@example.com
+                trabajador@example.com
               </Text>
             </Dropdown.Item>
             <Dropdown.Item
@@ -147,11 +149,11 @@ export default function NavbarNew() {
             </Dropdown.Item>
             <Dropdown.Item key="/Incidencias">Incidencias</Dropdown.Item>
             <Dropdown.Item key="system" withDivider>
-              System
+              Sistema
             </Dropdown.Item>
             <Dropdown.Item key="configurations">Configurations</Dropdown.Item>
             <Dropdown.Item key="help_and_feedback" withDivider>
-              Help & Feedback
+              Ayuda y comentarios
             </Dropdown.Item>
             {/*Quitado de mientras key="logout" */}
             <Dropdown.Item
