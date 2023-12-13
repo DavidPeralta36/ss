@@ -22,7 +22,7 @@ export async function POST(req, {params}) {
             var nombreArchivo = cert.certificado
 
             try{
-                const buffer = await readFile(path.join(path.join(process.cwd() ,'\\app\\resources\\2\\cursos', nombreArchivo)));
+                const buffer = await readFile(path.join(path.join(process.cwd() ,'\\app\\resources',id,'cursos', nombreArchivo)));
                 console.log(path.join(path.join(process.cwd() ,'\\app\\resources\\2\\cursos', nombreArchivo)))
                 const headers = new Headers();
                 headers.append('Content-Disposition', `attachment; filename="${nombreArchivo}"`);
@@ -48,7 +48,7 @@ export async function POST(req, {params}) {
             var nombreArchivo = cert.certificado
 
             try{
-                const buffer = await readFile(path.join(path.join(process.cwd() ,'\\app\\resources\\2\\certificaciones', nombreArchivo)));
+                const buffer = await readFile(path.join(path.join(process.cwd() ,'\\app\\resources',id,'certificaciones', nombreArchivo)));
                 console.log(path.join(path.join(process.cwd() ,'\\app\\resources\\2\\certificaciones', nombreArchivo)))
                 const headers = new Headers();
                 headers.append('Content-Disposition', `attachment; filename="${nombreArchivo}"`);
@@ -73,8 +73,8 @@ export async function POST(req, {params}) {
             var nombreArchivo = cert.certificado
 
             try{
-                const buffer = await readFile(path.join(path.join(process.cwd() ,'\\app\\resources\\2\\lenguas', nombreArchivo)));
-                console.log(path.join(path.join(process.cwd() ,'\\app\\resources\\2\\lenguas', nombreArchivo)))
+                const buffer = await readFile(path.join(path.join(process.cwd() ,'\\app\\resources',id,'lenguas', nombreArchivo)));
+                console.log(path.join(path.join(process.cwd() ,'\\app\\resources',id,'lenguas', nombreArchivo)))
                 const headers = new Headers();
                 headers.append('Content-Disposition', `attachment; filename="${nombreArchivo}"`);
                 headers.append('Content-Type', 'application/pdf'); // Cambiado a 'application/pdf' para indicar que es un archivo PDF
@@ -98,7 +98,7 @@ export async function POST(req, {params}) {
             var nombreArchivo = cert.justificante
 
             try{
-                const buffer = await readFile(path.join(path.join(process.cwd() ,'\\app\\resources\\2\\incapacidades', nombreArchivo)));
+                const buffer = await readFile(path.join(path.join(process.cwd() ,'\\app\\resources',id,'incapacidades', nombreArchivo)));
                 console.log(path.join(path.join(process.cwd() ,'\\app\\resources\\2\\incapacidades', nombreArchivo)))
                 const headers = new Headers();
                 headers.append('Content-Disposition', `attachment; filename="${nombreArchivo}"`);

@@ -44,10 +44,9 @@ export async function PUT(req, { params }) {
     }
 
 
-    const updatedUser = await prisma.usrs.upsert({
+    const updatedUser = await prisma.usrs.update({
       where: { id: parseInt(id) },
-      update: body,
-      create: body,
+      data: body,
     });
 
     return NextResponse.json(updatedUser);

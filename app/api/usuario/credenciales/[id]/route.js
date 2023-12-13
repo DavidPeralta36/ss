@@ -4,7 +4,7 @@ import {writeFile, mkdir} from 'fs/promises'
 import path from "path";
 import prisma from "@/app/components/db";
 import { data } from "autoprefixer";
-
+import { hash } from "bcrypt";
 
 export async function PUT(req, { params }) {
   try {
@@ -14,13 +14,15 @@ export async function PUT(req, { params }) {
     const nombre = data.get('nombre')
     const username = data.get('username')
     const password = data.get('password')
+
+    const hashedPassword = await hash(password, 10)
     
     
     const body = {
       id,
       nombre,
       username,
-      password
+      password: hashedPassword
     }
     console.log(body)
     

@@ -160,6 +160,7 @@ export default function CardU({user}) {
           // Utiliza import() para cargar la imagen de forma asíncrona
           const dynamicImage = await import(`../../resources/${usrData.id}/profilePick/${usrData.img}`);
           setImagePath(dynamicImage.default);
+          setEditingData(usrData)
         }
       } catch (error) {
         // Manejar el error, por ejemplo, imprimir un mensaje en la consola
